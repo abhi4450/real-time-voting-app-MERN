@@ -1,0 +1,38 @@
+
+
+.resultsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .pollResult {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .pollTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .optionList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .optionItem {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .noResults {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  

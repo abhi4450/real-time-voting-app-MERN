@@ -1,0 +1,61 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+.nav {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+}
+.nav ul h1 {
+  font-size: 1.5rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-bottom: 2rem;
+}
+
+.nav li {
+  margin: 10px 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+.nav a.active {
+  font-weight: bold;
+  color: #ff4d4d;
+}
+.nav a:hover {
+  font-weight: bold;
+}
+
+.logoutButton {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ff4d4d;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logoutButton:hover {
+  background-color: #e03e3e;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+}
