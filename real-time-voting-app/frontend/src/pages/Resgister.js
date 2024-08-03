@@ -25,11 +25,14 @@ const Resgister = () => {
     console.log(name, email, password);
 
     try {
-      let response = await axios.post("http://localhost:5000/api/register", {
-        name,
-        email,
-        password,
-      });
+      let response = await axios.post(
+        "https://real-time-voting-app-mern.onrender.com/api/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       if (response.status === 201) {
         alert(response.data.message);
         console.log(response.data.user);

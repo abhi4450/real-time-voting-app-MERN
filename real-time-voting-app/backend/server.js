@@ -11,7 +11,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", 
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   },
 });
@@ -31,11 +31,9 @@ const userRoutes = require("./routes/User");
 const pollRoutes = require("./routes/Poll");
 const commentRoutes = require("./routes/Comment");
 
-
 app.use("/api", userRoutes);
 app.use("/api", pollRoutes);
 app.use("/api", commentRoutes);
-
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -51,13 +49,10 @@ mongoose
     console.error("Error connecting to database:", err);
   });
 
-
 app.set("io", io);
-
 
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
-
 
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);

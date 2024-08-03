@@ -1,16 +1,13 @@
-
-
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import { AxiosInstance } from "../services/api";
-import styles from "./PollResults.module.css"; 
+import styles from "./PollResults.module.css";
 
 const PollResults = () => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-   
-    const socket = io("http://localhost:5000");
+    const socket = io("https://real-time-voting-app-mern.onrender.com");
 
     const fetchResults = async () => {
       try {
@@ -21,16 +18,13 @@ const PollResults = () => {
       }
     };
 
-   
     fetchResults();
 
-   
     socket.on("pollUpdate", (updatedResults) => {
       console.log("Received updated poll results:", updatedResults);
       setResults(updatedResults);
     });
 
-    
     return () => {
       socket.disconnect();
     };

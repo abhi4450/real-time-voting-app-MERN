@@ -5,7 +5,7 @@ import io from "socket.io-client";
 const CommentSection = ({ pollId }) => {
   const [comments, setComments] = useState([]);
   const [text, setText] = useState("");
-  const socket = io("http://localhost:5000");
+  const socket = io("https://real-time-voting-app-mern.onrender.com");
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -49,9 +49,8 @@ const CommentSection = ({ pollId }) => {
         <textarea value={text} onChange={(e) => setText(e.target.value)} />
         <button type="submit">Add Comment</button>
       </form>
-          <ul>
-
-          {comments.map((comment) => (
+      <ul>
+        {comments.map((comment) => (
           <li key={comment._id}>
             {comment.createdBy ? (
               <strong>{comment.createdBy.name}:</strong>
@@ -67,6 +66,3 @@ const CommentSection = ({ pollId }) => {
 };
 
 export default CommentSection;
-
-
-

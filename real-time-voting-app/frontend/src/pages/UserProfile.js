@@ -29,7 +29,7 @@ const UserProfile = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/uploadProfilePicture",
+        "https://real-time-voting-app-mern.onrender.com/api/uploadProfilePicture",
         formData,
         {
           headers: {
@@ -60,7 +60,7 @@ const UserProfile = () => {
           {user.profilePicture && (
             <div className={classes["profile-picture"]}>
               <img
-                src={`http://localhost:5000${user.profilePicture}`}
+                src={`https://real-time-voting-app-mern.onrender.com${user.profilePicture}`}
                 alt="Profile"
                 className={classes["profile-img"]}
               />

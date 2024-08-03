@@ -27,10 +27,13 @@ const Login = () => {
     setError("");
 
     try {
-      let response = await axios.post("http://localhost:5000/api/login", {
-        email,
-        password,
-      });
+      let response = await axios.post(
+        "https://real-time-voting-app-mern.onrender.com/api/login",
+        {
+          email,
+          password,
+        }
+      );
       if (response.status === 200) {
         alert(response.data.message);
         console.log(response.data.user);
